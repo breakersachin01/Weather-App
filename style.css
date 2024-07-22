@@ -1,0 +1,93 @@
+/*Note: if we give the class name then we can access that using ".classname"(like: .container, .icon) But if we doesn't give class name then we can access that by that "tag name"(like: body, form)*/
+body{
+    margin: 0;                              /*it will remove the default margin*/
+    font-family: "Montserrat", sans-serif;  /*font-family property specifies the font for an element. if this font is not present "Montserrat" then it will used this font=> "sans-serif"*/
+    background-color: #243747;           /*set thebackgrount color of whole body*/  
+}
+
+.container{                               /*with the name of the "div Class" we can target to div*/
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);   /*used to  give the box-shadow==> "x-axis, y-axis, for-shadow, give-shadow-color" = 0 0 20px rgba(0,0,0,.5)*/
+    margin: 0 auto;
+    margin-top: 50px;                     /*gives the margin of the constainer from the top of 50px*/
+    text-align: center;                   /*it will align the container to the center*/
+    max-width: 600px;                     /*set the width of the container of 600px, so it will turn the container left so to make it center again use "auto" in the margin to make it center again.*/
+    border-radius:  10px;                 /*it will make the container-border in circle*/
+    padding: 20px;                        /*it will set the padding from the border of the container to the text of the container.*/   
+} 
+
+form{                                   /*set style in the form. it is tag declared directly so we can access it by its tag name also.*/
+    display: flex;                      /*used for control the spacing between items*/
+    justify-content: center;            /*we can bring everything to the center using "justify-content: center" it will set the content center by "Horizontaly only"*/
+    align-items: center;                /*we can bring everything to the center using "align-items: center" it will set the content center by "Vertically only"*/
+    margin-bottom: 20px;                /*used to give margin to the bottom of the form.*/
+
+}
+
+form input[type="text"]{              /*give the style on input box*/
+    padding: 10px;                    /*it give space of the input box*/
+    border: none;                     /*remove the border of input box*/
+    outline: none;                    /*remove the outline of the border which comes during typing.*/
+    font-size:  18px;                 /*increase or decrease the font size*/
+    width: 60%;                       /*set the width of the input box*/
+}
+form input[type="submit"]{          /*Apply style on "Get Weather" button*/
+    background-color: #007bff;    /*set the background color of the button*/
+    color: #fff;                  /*Set the text color od the button*/
+    border: none;
+    padding: 10px 20px;             /*Padding: top&bottom = 10px and left&right = 20px*/
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;               /*when we move curser on the buttom it will turn into the hand*/
+    outline: none;
+    transition: background-color .3s ease;  /*changes to the background color over 0.3 seconds with an easing effect that starts slow, speeds up, and then slows down.*/
+}
+form input[type="submit"]:hover{     /*when we go to button it will change the color and "hover" is used for it to changing the color.*/
+    background-color: #0062cc;
+}
+
+.icon img{
+    width: 100px;
+    height: 100px; 
+    background-size:  contain;                  /*scales the background image to fit within the element's dimensions while maintaining its aspect ratio, ensuring the entire image is visible without cropping.*/
+    background-repeat: no-repeat;               /*CSS property ensures that the background image is displayed only once, without repeating.*/
+    background-position: center, center;        /*horizontly = centerr & vertically = center*/
+}
+
+.temperature{
+    font-size: 48px;
+    font-weight: bold;           /*used to specify the thickness or boldness of the text.*/
+    margin: 20px 0;
+}
+
+.description{
+    font-size: 24px;
+    margin-bottom: 20px;   
+}
+
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.details > div{             /*it will target all the "div tag" which is inside the "details"*/
+    padding: 20px;
+    background-color: #f1f1f1;  /*give the color to all div content*/
+    margin: 10px;                 /*give the margin of 10px between each div tag*/
+    flex: 1;                      /*after sinkring it the letter of each div tag goes to down and cover the rest apace(basically used to filling the remaining space)*/
+    border-radius: 5px;
+    text-align: center;
+    min-height: 45px;             /*fix the minimum size*/   
+}
+
+@media (max-width: 768px){       /*if we open this app into phone then how the content resible===> are declared here*/
+    form{
+        flex-direction: column;            /*the next element goes to next line*/
+    }
+
+    form input[type="text"]{
+        width: 100%;                  /*the next element goes automaticall to the next line and maintain the 10px space from the first element into the bottom*/
+        margin-bottom: 10px;
+    }
+}
